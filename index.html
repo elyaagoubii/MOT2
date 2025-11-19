@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion des Tâches – SONACOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+            },
+            colors: {
+              'sonacos-green': '#2E7D32',
+              'sonacos-yellow': '#FFD54F',
+              'sonacos-teal-dark': '#2A4D69',
+              'sonacos-lavender': '#EAEBFC',
+              'sonacos-brown': '#D39D3C',
+              'sonacos-blue-grey': '#607d8b',
+              'sonacos-slate-dark': '#34495E',
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/css" media="print">
+      @page {
+        size: A4;
+        margin: 0; /* Supprime les en-têtes/pieds de page du navigateur */
+      }
+      body {
+        -webkit-print-color-adjust: exact;
+        margin: 0.375in; /* Applique la marge au contenu lui-même */
+      }
+    </style>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f1f5f9; /* slate-100 */
+      }
+      
+      /* Magical Effects Styles */
+      .interactive-glow {
+        position: relative;
+      }
+      .interactive-glow::before {
+        content: '';
+        position: absolute;
+        left: var(--glow-x, -1000px);
+        top: var(--glow-y, -1000px);
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle closest-side, rgba(46, 125, 50, 0.08), transparent);
+        transform: translate(-50%, -50%);
+        transition: left 0.2s ease, top 0.2s ease;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .ripple-effect {
+        position: absolute;
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple-animation 600ms linear;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      
+      button {
+        position: relative;
+        overflow: hidden;
+      }
+
+      @keyframes ripple-animation {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.5.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div id="direct-export-container" class="absolute -top-[9999px] -left-[9999px] print:hidden"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "ÉTAT DE LA MAIN D'ŒUVRE À LA TÂCHE",
+  "description": "Une application pour calculer la rémunération des ouvriers à la tâche en fonction des opérations effectuées, basée sur une grille de tarifs prédéfinie.",
+  "requestFramePermissions": []
+}
